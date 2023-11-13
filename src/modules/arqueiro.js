@@ -1,9 +1,10 @@
 import {Personagem} from "./personagem";
 
 export class Arqueiro extends Personagem{
-    tipo = 'Arqueiro'
-    constructor(nome, level, destreza) {
-        super(nome, level)
+    static tipo = 'Arqueiro'
+    static descricao = 'Você tem o meu arco!'
+    constructor(nome, destreza) {
+        super(nome)
         this.destreza = destreza
     }
 
