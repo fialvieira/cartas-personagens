@@ -1,32 +1,18 @@
-import {Personagem} from "./modules/personagem.js";
+import {PersonagemView} from "./components/personagem-view"
+import {Mago} from "./modules/mago"
+import {Arqueiro} from "./modules/arqueiro";
+import {ArqueiroMago} from "./modules/arqueiro-mago";
 
-/*const personagemJose = {
-    nome: 'Jose',
-    vida: 7,
-    mana: 6,
-    level: 3,
-    tipo: 'Arqueiro',
-}*/
+const magoAntonio = new Mago('Antonio', 4, 'Fogo', 4, 3)
+const magaJulia = new Mago('Julia', 8, 'Gelo', 7, 10)
+const arqueiroFilipe = new Arqueiro('Filipe', 7, 10)
+const arqueiroMagoChico = new ArqueiroMago('Chico', 7, 10, 'Ar', 4, 8)
 
-const personagemAna = {
-    nome: 'Ana',
-    vida: 8,
-    mana: 10,
-    level: 5,
-    tipo: 'Bárbaro'
-}
+const personagens = [
+    magoAntonio,
+    magaJulia,
+    arqueiroFilipe,
+    arqueiroMagoChico
+]
 
-const personagemPedrinho = new Personagem()
-personagemPedrinho.nome = 'Pedrinho'
-personagemPedrinho.mana = 12
-personagemPedrinho.vida = 7
-personagemPedrinho.level = 5
-personagemPedrinho.tipo = 'Mago'
-
-const personagemJose = new Personagem()
-personagemJose.nome = 'José'
-personagemJose.tipo = 'Arqueiro'
-personagemJose.level = 3
-
-console.log('Insignia de ' + personagemPedrinho.nome + ': ' + personagemPedrinho.obterInsignia())
-console.log('Insignia de ' + personagemJose.nome + ': ' + personagemJose.obterInsignia())
+new PersonagemView(personagens).render()
